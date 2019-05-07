@@ -40,20 +40,123 @@
 
 #include <MeggyJrSimple.h>    // Required code, line 1 of 2.
 
+int color;
+
 void setup()                    // run once, when the sketch starts
 {
   MeggyJrSimpleSetup();      // Required code, line 2 of 2.
+  color = 1;
 }
 
 void loop()                     // run over and over again
 {
-  
-  DrawPx(3,4,Yellow);           // Draw a dot at x=3, y=4, in yellow.
-  DisplaySlate();                  // Write the drawing to the screen.
-  delay(1000);                  // waits for a second
-  
+  drawOne();
+  DisplaySlate();                  // Write the drawing to the screen.  
+  delay(1000);
   ClearSlate();                 // Erase drawing
-  DisplaySlate();                  // Write the (now empty) drawing to the screen.
-   
-  delay(1000);                  // waits for a second
+
+  drawTwo();
+  DisplaySlate();                  // Write the drawing to the screen.  
+  delay(1000);
+  ClearSlate();
+
+  drawThree();
+  DisplaySlate();                  // Write the drawing to the screen.  
+  delay(1000);
+  ClearSlate();
+  
+  drawFour();
+  DisplaySlate();                  // Write the drawing to the screen.  
+  delay(1000);
+  ClearSlate();
+  
+  drawFive();
+  DisplaySlate();                  // Write the drawing to the screen.  
+  delay(1000);
+  ClearSlate();
+  
+  drawSix();
+  DisplaySlate();                  // Write the drawing to the screen.  
+  delay(1000);
+  ClearSlate();
+ 
+  drawSeven();
+  DisplaySlate();                  // Write the drawing to the screen.  
+  delay(1000);
+  ClearSlate();
+}
+
+void drawOne()
+{
+  for (int i = 0; i < 8; i++)
+  {
+    for (int j = 0; j < 3; j++)
+    {
+      DrawPx(i, j, Blue);
+    }
+  }
+  
+  for (int i = 0; i < 8; i++)
+  {
+    for (int j = 3; j < 8; j++)
+    {
+      DrawPx(i, j, DimAqua);
+    }
+   }
+}
+
+void drawTwo()
+{
+  drawOne();
+  DrawPx(0, 3, Red);
+  DrawPx(1, 3, Orange);
+  DrawPx(2, 3, Green);
+  DrawPx(3, 3, Violet);
+}
+
+void drawThree()
+{
+  drawTwo();
+  DrawPx(0, 4, Red);
+  DrawPx(1, 5, Red);
+  DrawPx(1, 4, Orange);
+  DrawPx(2, 4, Green);
+}
+
+void drawFour()
+{
+  drawThree();
+  DrawPx(2, 6, Red);
+  DrawPx(3, 6, Red);
+  DrawPx(2, 5, Orange);
+  DrawPx(3, 5, Orange);
+  DrawPx(3, 4, Green);
+}
+
+void drawFive()
+{
+  drawFour();
+  DrawPx(4, 6, Red);
+  DrawPx(4, 5, Orange);
+  DrawPx(4, 4, Green);
+  DrawPx(4, 3, Violet);
+}
+
+void drawSix()
+{
+  drawFive();
+  DrawPx(5, 6, Red);
+  DrawPx(6, 5, Red);
+  DrawPx(5, 5, Orange);
+  DrawPx(5, 4, Green);
+}
+
+void drawSeven()
+{
+  drawSix();
+  DrawPx(7, 4, Red);
+  DrawPx(7, 3, Red);
+  DrawPx(6, 4, Orange);
+  DrawPx(6, 3, Orange);
+  DrawPx(5, 3, Green);
 }
